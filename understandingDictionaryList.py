@@ -13,6 +13,9 @@ print("\t3. Exit")
 print("============================================================")
 
 # Ask for the user input
+menu_choice = input("\tWhat is your choice? ")
+print("============================================================")
+
 # Establish the choices in the menu
 # create choice 1
 # create choice 2
