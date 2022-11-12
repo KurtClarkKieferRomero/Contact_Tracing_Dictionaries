@@ -1,64 +1,70 @@
+# Create empty dictionary
+contact_tracing = {}
 # Introduce the program
 print("============================================================")
 print("\tWelcome to Contract Tracing program")
 print("============================================================")
 print("\tListed below is the menu of the program")
-print("============================================================")
 
-# Create a menu
-print("\tPlease Enter only numbers")
-print("\t1. Add Contacts")
-print("\t2. Search Contacts")
-print("\t3. Exit")
-print("============================================================")
-
-# Create empty dictioanry
-
-# Ask for the user input
-menu_choice = int(input("\tWhat is your choice? "))
-
-#Create empty dictionary
-contact_tracing = {}
-
-# Establish the choices in the menu
-# create choice 1
-
-if menu_choice == 1:
+while True:
+    # Create a menu
     print("============================================================")
-    print("Input the correct information below")
+    print("\tPlease Enter only numbers")
+    print("\t1. Add Contacts")
+    print("\t2. Search Contacts")
+    print("\t3. Exit")
     print("============================================================")
 
-    #name, number, gender, birthdate, email address, City/municipality, Province, Country
-    name = input("Name (Last name, First Name): ")
-    number = input("Number (Use 09******286 format): ")
-    gender = input("Gender (Male, Female, Rather not say): ")
-    birthdate = input("Birthdate (MM/DD/YYYY): ")
-    emailAddress = input("Email Address (sampleemail@gmail.com): ")
-    city = input("City/Municipality: ")
-    province = input("Province: ")
-    country = input("Country: ")
+    # Ask for the user input
+    menu_choice = int(input("\tWhat is your choice? "))
 
-    # Created empty dictionary inside contact_tracing dictionary
-    contact_tracing[name] = {}
-    contact_tracing[name]["contactName"] = name
-    contact_tracing[name]["contactNumber"] = number
-    contact_tracing[name]["contactGender"] = gender
-    contact_tracing[name]["contactBirthdate"] = birthdate
-    contact_tracing[name]["contactEmailAddress"] = emailAddress
-    contact_tracing[name]["contactCity"] = city
-    contact_tracing[name]["contactProvince"] = province
-    contact_tracing[name]["contactCountry"] = country
+    #Create empty dictionary
+
+
+    # Establish the choices in the menu
+    # create choice 1
+
+    if menu_choice == 1:
+        print("============================================================")
+        print("Input the correct information below")
+        print("============================================================")
+
+        #name, number, gender, birthdate, email address, City/municipality, Province, Country
+        name = input("Name (Last name, First Name): ")
+        number = input("Number (Use 09******286 format): ")
+        gender = input("Gender (Male, Female, Rather not say): ")
+        birthdate = input("Birthdate (MM/DD/YYYY): ")
+        emailAddress = input("Email Address (sampleemail@gmail.com): ")
+        city = input("City/Municipality: ")
+        province = input("Province: ")
+        country = input("Country: ")
+        contact_tracing[name] = {}
+        contact_tracing[name]["Contact Name"] = name
+        contact_tracing[name]["Contact Number"] = number
+        contact_tracing[name]["Contact Gender"] = gender
+        contact_tracing[name]["Contact Birthdate"] = birthdate
+        contact_tracing[name]["Contact EmailAddress"] = emailAddress
+        contact_tracing[name]["Contact City"] = city
+        contact_tracing[name]["Contact Province"] = province
+        contact_tracing[name]["Contact Country"] = country
+        print("============================================================")
+        print("Contact information saved")
+
+    # create choice 2
+    elif menu_choice == 2:
+        search_name = str(input("Enter name of the contact (Last name, First name): "))
+        if search_name in contact_tracing:
+            for keyInContact_tracing in contact_tracing:
+                if search_name == keyInContact_tracing:
+                    print(search_name,": Contact information")
+                    for valueInKeyContact_tracing in contact_tracing[keyInContact_tracing]:
+                        print(valueInKeyContact_tracing,": ", contact_tracing[keyInContact_tracing][valueInKeyContact_tracing])
+        else:
+            print("The contact does not exist")
+    # create a looping exit or retry
     print("============================================================")
-    print("Contact information saved")
-
-# create choice 2
-elif menu_choice == 2:
-    search_name = input("Enter name of the contact (Last name, First name): ")
-    for i_name, j_details in contact_tracing.items():
-        if search_name == i_name:
-            print("Contact: ",i_name)
-            for key in j_details:
-                print(key, ": ", j_details[key])
-# create a looping exit or retry
-# AMOGUS
+    program_exit = input("Do you want to exit the program? (y/n): ")
+    if program_exit.lower() == "y":
+        break
+    # AMOGUS
 
