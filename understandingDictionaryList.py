@@ -48,8 +48,17 @@ if menu_choice == 1:
     contact_tracing[name]["contactCity"] = city
     contact_tracing[name]["contactProvince"] = province
     contact_tracing[name]["contactCountry"] = country
+    print("============================================================")
+    print("Contact information saved")
 
 # create choice 2
+elif menu_choice == 2:
+    search_name = input("Enter name of the contact (Last name, First name): ")
+    for i_name, j_details in contact_tracing.items():
+        if search_name == i_name:
+            print("Contact: ",i_name)
+            for key in j_details:
+                print(key, ": ", j_details[key])
 # create a looping exit or retry
 # AMOGUS
 
