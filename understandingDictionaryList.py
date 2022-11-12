@@ -26,18 +26,18 @@ while True:
 
     if menu_choice == 1:
         print("============================================================")
-        print("Input the correct information below")
+        print("\tInput the correct information below")
         print("============================================================")
 
         #name, number, gender, birthdate, email address, City/municipality, Province, Country
-        name = input("Name (Last name, First Name): ")
-        number = input("Number (Use 09******286 format): ")
-        gender = input("Gender (Male, Female, Rather not say): ")
-        birthdate = input("Birthdate (MM/DD/YYYY): ")
-        emailAddress = input("Email Address (sampleemail@gmail.com): ")
-        city = input("City/Municipality: ")
-        province = input("Province: ")
-        country = input("Country: ")
+        name = input("\tName (First Name Last Name): ")
+        number = input("\tNumber (Use 09******286): ")
+        gender = input("\tGender (Male, Female, Rather not say): ")
+        birthdate = input("\tBirthdate (MM/DD/YYYY): ")
+        emailAddress = input("\tEmail Address (sampleemail@gmail.com): ")
+        city = input("\tCity/Municipality: ")
+        province = input("\tProvince: ")
+        country = input("\tCountry: ")
         contact_tracing[name] = {}
         contact_tracing[name]["Contact Name"] = name
         contact_tracing[name]["Contact Number"] = number
@@ -48,22 +48,24 @@ while True:
         contact_tracing[name]["Contact Province"] = province
         contact_tracing[name]["Contact Country"] = country
         print("============================================================")
-        print("Contact information saved")
+        print("\tContact information saved")
 
     # create choice 2
     elif menu_choice == 2:
-        search_name = str(input("Enter name of the contact (Last name, First name): "))
+        print("============================================================")
+        search_name = str(input("\tEnter name of the contact (Last name, First name): "))
+        print("============================================================")
         if search_name in contact_tracing:
             for keyInContact_tracing in contact_tracing:
                 if search_name == keyInContact_tracing:
-                    print(search_name,": Contact information")
+                    print(search_name,"'s Contact information")
                     for valueInKeyContact_tracing in contact_tracing[keyInContact_tracing]:
                         print(valueInKeyContact_tracing,": ", contact_tracing[keyInContact_tracing][valueInKeyContact_tracing])
         else:
-            print("The contact does not exist")
+            print("\tThe contact does not exist")
     # create a looping exit or retry
     print("============================================================")
-    program_exit = input("Do you want to exit the program? (y/n): ")
+    program_exit = input("\tDo you want to exit the program? (y/n): ")
     if program_exit.lower() == "y":
         break
     # AMOGUS
