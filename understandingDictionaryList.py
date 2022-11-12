@@ -1,14 +1,16 @@
 # Introduce the program
-print("Welcome to Contract Tracing program")
 print("============================================================")
-print("Listed below is the menu of the program")
+print("\tWelcome to Contract Tracing program")
+print("============================================================")
+print("\tListed below is the menu of the program")
 print("============================================================")
 
 # Create a menu
-print("Please Enter only numbers")
-print("1. Add Contacts")
-print("2. Search Contacts")
-print("3. Exit")
+print("\tPlease Enter only numbers")
+print("\t1. Add Contacts")
+print("\t2. Search Contacts")
+print("\t3. Exit")
+print("============================================================")
 
 # Ask for the user input
 # Establish the choices in the menu
