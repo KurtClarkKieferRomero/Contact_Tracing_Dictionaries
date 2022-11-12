@@ -19,6 +19,7 @@ menu_choice = int(input("\tWhat is your choice? "))
 
 #Create empty dictionary
 contact_tracing = {}
+
 # Establish the choices in the menu
 # create choice 1
 
@@ -26,6 +27,7 @@ if menu_choice == 1:
     print("============================================================")
     print("Input the correct information below")
     print("============================================================")
+
     #name, number, gender, birthdate, email address, City/municipality, Province, Country
     name = input("Name (Last name, First Name): ")
     number = input("Number (Use 09******286 format): ")
@@ -35,6 +37,18 @@ if menu_choice == 1:
     city = input("City/Municipality: ")
     province = input("Province: ")
     country = input("Country: ")
+
+    # Created empty dictionary inside contact_tracing dictionary
+    contact_tracing[name] = {}
+    contact_tracing[name]["contactName"] = name
+    contact_tracing[name]["contactNumber"] = number
+    contact_tracing[name]["contactGender"] = gender
+    contact_tracing[name]["contactBirthdate"] = birthdate
+    contact_tracing[name]["contactEmailAddress"] = emailAddress
+    contact_tracing[name]["contactCity"] = city
+    contact_tracing[name]["contactProvince"] = province
+    contact_tracing[name]["contactCountry"] = country
+
 # create choice 2
 # create a looping exit or retry
 # AMOGUS
